@@ -72,7 +72,7 @@ public class Conecta {
 
             JSONObject json = readJsonFromUrlPost(response);//pega objeto json
 
-            System.out.println(json.toString());
+            //System.out.println(json.toString());
             try {
                 token = json.get("token").toString();
                 tempo = Integer.parseInt(json.get("tempoExpirar").toString());
@@ -94,8 +94,8 @@ public class Conecta {
             JSONObject json = readJsonFromUrl(url);//pega objeto json
             Gson g = new Gson();//biblioteca gson para ja pegar os objetos
 
-            System.out.println(json.toString());
-            System.out.println(json.get("eventos"));
+            //System.out.println(json.toString());
+            //System.out.println(json.get("eventos"));
 
             Type list = new TypeToken<List<Evento>>() {}.getType();//criando a lista
             listaE = new Gson().fromJson(json.get("eventos").toString(), list);//colocando o q esta no objeto eventos no list<Evento>

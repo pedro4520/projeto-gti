@@ -100,7 +100,7 @@ public class ListaEventos extends AppCompatActivity {
         listaEvento = conecta.buscaEventos();
 
         for(Evento e : listaEvento){
-            e.transforma();
+            e.transforma();//funcao que vai transformar link da imagem em byte[] e o long em Date
         }
 
         Collections.sort(listaEvento, new OrdenaEventoData());
@@ -109,12 +109,12 @@ public class ListaEventos extends AppCompatActivity {
         //System.out.println("FICOU: "+pref.getString("token","não encontrado"));
         //System.out.println("SENHA: "+pref.getInt("tempo",0));
 
-        iniciaTimer(pref.getInt("tempo",1));
+        iniciaTimer(pref.getInt("tempo",1));//inicia contador para expirar sessão
     }
 
     private void iniciaTimer(final int tempo){
-        TEMPO /= tempo;
-        System.out.println("FICOU: "+TEMPO);
+        TEMPO *= tempo;
+        //System.out.println("FICOU: "+TEMPO);
         if (timer == null) {
             timer = new Timer();
             TimerTask tarefa = new TimerTask() {
@@ -148,7 +148,7 @@ public class ListaEventos extends AppCompatActivity {
 
         bOption1.setText("Confirmar");
 
-        bOption1.setTextSize(35);
+        bOption1.setTextSize(25);
 
         bOption1.setBackgroundResource(R.drawable.transparent_button);
 
